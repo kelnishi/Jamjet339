@@ -27,22 +27,33 @@ namespace HutongGames.PlayMaker.Actions
 		
         [RequiredField]
 		public FunctionCall functionCall;
-
+		
+        [Tooltip("Repeat every frame while the state is active.")]
+        public bool everyFrame;
+		
 		public override void Reset()
 		{
 			gameObject = null;
 			delivery = MessageType.SendMessage;
 			options = SendMessageOptions.DontRequireReceiver;
 			functionCall = null;
+			everyFrame = false;
 		}
 
 		public override void OnEnter()
 		{
 			DoSendMessage();
 			
-			Finish();
+			if (!everyFrame)
+			{
+				Finish();
+			}
 		}
-
+		
+		public override void OnUpdate() {
+			DoSendMessage();
+		}
+		
 		void DoSendMessage()
 		{
 			var go = Fsm.GetOwnerDefaultTarget(gameObject);

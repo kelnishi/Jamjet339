@@ -9,17 +9,36 @@ public class FlightController : MonoBehaviour {
 	public Rigidbody liftBody;
 	public Rigidbody thrustBody;
 	
+	public float thrustForce = 1000f;
+	public float thrustLift = 100f;
 	
 	void Start () {
 		
 	}
 	
+	public Quaternion steer = Quaternion.identity;
+	public bool thrustOn = false;
+	
 	void Update () {
 		if (liftBody) {
 			liftBody.AddForce(lift/(rigidbody.mass*liftBody.mass));	
 		}
-		if (thrustBody) {
-			thrustBody.AddRelativeForce(thrust);
+		if (thrustBody & thrustOn) {
+			Vector3 heading = steer * Vector3.forward;
+			heading.y = 0f;
+			
+			thrustBody.transform.rotation = Quaternion.identity;
+			thrustBody.transform.LookAt(thrustBody.transform.position + heading);
+			
+			thrustBody.AddForce(thrustBody.transform.TransformDirection(Vector3.forward * thrustForce) + Vector3.up * thrustLift,ForceMode.Acceleration);
 		}
+	}
+	
+	void Steer(Quaternion look) {
+		steer = look;
+	}
+	
+	void SetThrust(bool on) {
+		thrustOn = on;
 	}
 }
