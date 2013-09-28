@@ -9,42 +9,27 @@ ModelImporter:
     100006: Jam_Jet_Aft_Side_A_01
     100008: Jam_Jet_Fusalage_A_01
     100010: Jam_Jet_Wing_A_01
-    100012: Box001
-    100014: Jam_Jet_Wing_Engine_A_01
-    100016: Jam_Jet_Wing_Propeller_A_02
     400000: //RootNode
     400002: Jam_Jet_Aft_A_01
     400004: Jam_Jet_Aft_A_02
     400006: Jam_Jet_Aft_Side_A_01
     400008: Jam_Jet_Fusalage_A_01
     400010: Jam_Jet_Wing_A_01
-    400012: Box001
-    400014: Jam_Jet_Wing_Engine_A_01
-    400016: Jam_Jet_Wing_Propeller_A_02
     2300000: Jam_Jet_Aft_A_01
     2300002: Jam_Jet_Aft_A_02
     2300004: Jam_Jet_Aft_Side_A_01
     2300006: Jam_Jet_Fusalage_A_01
     2300008: Jam_Jet_Wing_A_01
-    2300010: Box001
-    2300012: Jam_Jet_Wing_Engine_A_01
-    2300014: Jam_Jet_Wing_Propeller_A_02
     3300000: Jam_Jet_Aft_A_01
     3300002: Jam_Jet_Aft_A_02
     3300004: Jam_Jet_Aft_Side_A_01
     3300006: Jam_Jet_Fusalage_A_01
     3300008: Jam_Jet_Wing_A_01
-    3300010: Box001
-    3300012: Jam_Jet_Wing_Engine_A_01
-    3300014: Jam_Jet_Wing_Propeller_A_02
     4300000: Jam_Jet_Fusalage_A_01
     4300002: Jam_Jet_Aft_Side_A_01
     4300004: Jam_Jet_Wing_A_01
     4300006: Jam_Jet_Aft_A_01
     4300008: Jam_Jet_Aft_A_02
-    4300010: Box001
-    4300012: Jam_Jet_Wing_Engine_A_01
-    4300014: Jam_Jet_Wing_Propeller_A_02
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -62,7 +47,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: .00999999978
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
@@ -96,5 +81,5 @@ ModelImporter:
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   additionalBone: 1
-  animationType: 2
+  animationType: 0
   userData: 
