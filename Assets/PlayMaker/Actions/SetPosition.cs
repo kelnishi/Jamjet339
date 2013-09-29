@@ -82,7 +82,7 @@ namespace HutongGames.PlayMaker.Actions
 			
 			// init position
 			
-			Vector3 position;
+			Vector3 position = Vector3.zero;
 
 			if (vector.IsNone)
 			{
@@ -95,9 +95,9 @@ namespace HutongGames.PlayMaker.Actions
 			
 			// override any axis
 
-			if (!x.IsNone) position.x = x.Value;
-			if (!y.IsNone) position.y = y.Value;
-			if (!z.IsNone) position.z = z.Value;
+			if (!x.IsNone) position.x += x.Value;
+			if (!y.IsNone) position.y += y.Value;
+			if (!z.IsNone) position.z += z.Value;
 
 			// apply
 			
