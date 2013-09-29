@@ -8,7 +8,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400000}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Desert
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25,7 +25,7 @@ GameObject:
   - 4: {fileID: 400002}
   - 114: {fileID: 11400000}
   - 154: {fileID: 15400000}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - 33: {fileID: 3300000}
   - 64: {fileID: 6400000}
   - 23: {fileID: 2300000}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Runway_mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60,7 +60,7 @@ GameObject:
   - 4: {fileID: 400006}
   - 33: {fileID: 3300002}
   - 23: {fileID: 2300002}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Hangar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77,7 +77,7 @@ GameObject:
   - 4: {fileID: 400008}
   - 114: {fileID: 11400002}
   - 154: {fileID: 15400002}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: HighDesert
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - 4: {fileID: 400010}
   - 114: {fileID: 11400004}
   - 154: {fileID: 15400004}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Mountains
   m_TagString: Untagged
   m_Icon: {fileID: 0}
