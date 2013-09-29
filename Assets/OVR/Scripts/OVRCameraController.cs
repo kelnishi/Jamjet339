@@ -43,6 +43,7 @@ public class OVRCameraController : OVRComponent
 	// PUBLIC MEMBERS
 	
 	// IPD
+	[SerializeField]
 	private float  		ipd 		= 0.064f; 				// in millimeters
 	public 	float 		IPD
 	{
@@ -51,6 +52,7 @@ public class OVRCameraController : OVRComponent
 	}
 	
 	// VERTICAL FOV
+	[SerializeField]
 	private float  		verticalFOV = 90.0f;	 			// in degrees
 	public 	float		VerticalFOV
 	{
@@ -104,6 +106,7 @@ public class OVRCameraController : OVRComponent
 	}
 	
 	// Set the near and far clip plane for both cameras
+	[SerializeField]
 	private float 		nearClipPlane   = 0.15f;
 	public  float 		NearClipPlane
 	{
@@ -111,7 +114,8 @@ public class OVRCameraController : OVRComponent
 		set{nearClipPlane = value; UpdateCamerasDirtyFlag = true;}
 	}
 	
-	private float 		farClipPlane    = 1000.0f;     
+	[SerializeField]
+	private float 		farClipPlane    = 10000.0f;     
 	public  float 		FarClipPlane
 	{
 		get{return farClipPlane;}
@@ -123,6 +127,7 @@ public class OVRCameraController : OVRComponent
 	// Awake
 	new void Awake()
 	{
+
 		base.Awake();
 		
 		// Get the cameras
@@ -135,6 +140,8 @@ public class OVRCameraController : OVRComponent
 			
 			if(cameras[i].name == "CameraRight")
 				CameraRight = cameras[i];
+			
+			cameras[i].depthTextureMode = DepthTextureMode.DepthNormals;
 		}
 		
 		if((CameraLeft == null) || (CameraRight == null))
