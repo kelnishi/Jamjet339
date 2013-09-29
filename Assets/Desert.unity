@@ -137,7 +137,7 @@ Transform:
   m_PrefabInternal: {fileID: 2067520783}
   m_GameObject: {fileID: 285165327}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2946.36108, y: -320.54248, z: 4387.53467}
+  m_LocalPosition: {x: -2946.36108, y: -320.54248, z: 3612.41455}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 582111599}
@@ -220,7 +220,7 @@ MonoBehaviour:
   m_TreeMaximumFullLODCount: 50
   m_DetailObjectDistance: 80
   m_DetailObjectDensity: 1
-  m_HeightmapPixelError: 5
+  m_HeightmapPixelError: 10
   m_SplatMapDistance: 1000
   m_HeightmapMaximumLOD: 0
   m_CastShadows: 1
@@ -361,13 +361,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TerrainData: {fileID: 15600000, guid: 72b238d8a1c170b4189423582b011508, type: 2}
   m_TreeDistance: 2000
-  m_TreeBillboardDistance: 50
+  m_TreeBillboardDistance: 5
   m_TreeCrossFadeLength: 5
   m_TreeMaximumFullLODCount: 50
-  m_DetailObjectDistance: 80
+  m_DetailObjectDistance: 250
   m_DetailObjectDensity: 1
-  m_HeightmapPixelError: 1
-  m_SplatMapDistance: 1000
+  m_HeightmapPixelError: 3
+  m_SplatMapDistance: 2000
   m_HeightmapMaximumLOD: 0
   m_CastShadows: 1
   m_LightmapIndex: -1
@@ -739,6 +739,38 @@ Prefab:
     - target: {fileID: 400000, guid: cbc93f8d196b09d4ba9675d1bbffce3d, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: cbc93f8d196b09d4ba9675d1bbffce3d, type: 2}
+      propertyPath: m_DetailObjectDistance
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: cbc93f8d196b09d4ba9675d1bbffce3d, type: 2}
+      propertyPath: m_DetailObjectDensity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: cbc93f8d196b09d4ba9675d1bbffce3d, type: 2}
+      propertyPath: m_TreeBillboardDistance
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: cbc93f8d196b09d4ba9675d1bbffce3d, type: 2}
+      propertyPath: m_SplatMapDistance
+      value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: cbc93f8d196b09d4ba9675d1bbffce3d, type: 2}
+      propertyPath: m_HeightmapPixelError
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: cbc93f8d196b09d4ba9675d1bbffce3d, type: 2}
+      propertyPath: m_HeightmapPixelError
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: cbc93f8d196b09d4ba9675d1bbffce3d, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 3612.41455
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: cbc93f8d196b09d4ba9675d1bbffce3d, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -320.54248
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cbc93f8d196b09d4ba9675d1bbffce3d, type: 2}
