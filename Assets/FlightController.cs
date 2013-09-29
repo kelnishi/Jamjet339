@@ -20,8 +20,12 @@ public class FlightController : MonoBehaviour {
 	
 	public float speed;
 	
+	Vector3 lastPosition;
+	
+	public float distance = 0f;
+	
 	void Start () {
-		
+		lastPosition = transform.position;
 	}
 	
 	public Quaternion steer = Quaternion.identity;
@@ -47,6 +51,9 @@ public class FlightController : MonoBehaviour {
 		}
 		
 		thrustBody.AddForce(force, ForceMode.Acceleration);
+		
+		distance += (transform.position - lastPosition).magnitude;
+		lastPosition = transform.position;
 	}
 	
 	void Steer(Quaternion look) {
