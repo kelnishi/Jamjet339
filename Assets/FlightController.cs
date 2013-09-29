@@ -25,12 +25,12 @@ public class FlightController : MonoBehaviour {
 		}
 		if (thrustBody & thrustOn) {
 			Vector3 heading = steer * Vector3.forward;
-			heading.y = 0f;
 			
 			thrustBody.transform.rotation = Quaternion.identity;
 			thrustBody.transform.LookAt(thrustBody.transform.position + heading);
 			
-			thrustBody.AddForce(thrustBody.transform.TransformDirection(Vector3.forward * thrustForce) + Vector3.up * thrustLift,ForceMode.Acceleration);
+			Vector3 thrustVector = thrustBody.transform.TransformDirection(Vector3.forward * thrustForce);
+			thrustBody.AddForce(thrustVector + Vector3.up * thrustLift,ForceMode.Acceleration);
 		}
 	}
 	
