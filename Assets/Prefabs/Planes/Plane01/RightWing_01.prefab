@@ -363,14 +363,12 @@ MonoBehaviour:
       actionData:
         actionNames:
         - HutongGames.PlayMaker.Actions.GetKeyDown
-        - HutongGames.PlayMaker.Actions.RotateGUI
         customNames:
         - 
-        - 
-        actionEnabled: 0101
-        actionIsOpen: 0101
-        actionStartIndex: 0000000003000000
-        actionHashCodes: 437581edaa718e06
+        actionEnabled: 01
+        actionIsOpen: 01
+        actionStartIndex: 00000000
+        actionHashCodes: 437581ed
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -383,23 +381,18 @@ MonoBehaviour:
         fsmStringParams: []
         fsmObjectParams: []
         fsmVarParams: []
-        byteData: 0800000044616d616765000100000000000000003f000000003f000100
+        byteData: 0800000044616d6167650001
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 0700000017000000110000000f0000000f0000000f0000000100000001000000
+        paramDataType: 070000001700000011000000
         paramName:
         - key
         - sendEvent
         - storeResult
-        - angle
-        - pivotX
-        - pivotY
-        - normalized
-        - applyGlobally
-        paramDataPos: 00000000040000000a0000000c00000011000000160000001b0000001c000000
-        paramByteDataSize: 0400000006000000020000000500000005000000050000000100000001000000
+        paramDataPos: 00000000040000000a000000
+        paramByteDataSize: 040000000600000002000000
     - name: Damaged 2
       description: 
       colorIndex: 0
@@ -433,7 +426,7 @@ MonoBehaviour:
         - 
         - 
         actionEnabled: 01010101
-        actionIsOpen: 00000000
+        actionIsOpen: 01010000
         actionStartIndex: 00000000050000000a00000011000000
         actionHashCodes: b4797e4ab4797e4aac65eef1437581ed
         unityObjectParams: []
@@ -644,7 +637,7 @@ MonoBehaviour:
       textureVariables: []
     description: 
     docUrl: 
-    showStateLabel: 1
+    showStateLabel: 0
     maxLoopCount: 0
     watermark: 
     version: 0

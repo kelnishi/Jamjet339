@@ -327,7 +327,7 @@ MonoBehaviour:
         - 
         - 
         actionEnabled: 01010101
-        actionIsOpen: 00000000
+        actionIsOpen: 00000100
         actionStartIndex: 00000000050000000a00000011000000
         actionHashCodes: b4797e4ab4797e4aac65eef1437581ed
         unityObjectParams: []
@@ -511,7 +511,7 @@ MonoBehaviour:
       textureVariables: []
     description: 
     docUrl: 
-    showStateLabel: 1
+    showStateLabel: 0
     maxLoopCount: 0
     watermark: 
     version: 0
@@ -616,7 +616,7 @@ MonoBehaviour:
       textureVariables: []
     description: 
     docUrl: 
-    showStateLabel: 1
+    showStateLabel: 0
     maxLoopCount: 0
     watermark: 
     version: 0
