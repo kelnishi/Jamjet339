@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using HutongGames.PlayMaker;
 using System.Collections;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -24,7 +25,18 @@ public class FlightController : MonoBehaviour {
 	
 	public float distance = 0f;
 	
+	public PlayMakerFSM fsm;
+	
+	public TTFText score;
+	
 	void Start () {
+		foreach (PlayMakerFSM f in GetComponents<PlayMakerFSM>()) {
+			if (f.FsmName == "Distance") {
+				fsm = f;
+				break;
+			}
+		}
+		
 		lastPosition = transform.position;
 	}
 	
@@ -34,7 +46,10 @@ public class FlightController : MonoBehaviour {
 	
 	private Vector3 up;
 	
+	private bool update = true;
+	
 	void Update () {
+		if (!update) return;
 		
 		speed = rigidbody.velocity.magnitude;
 		
@@ -54,6 +69,11 @@ public class FlightController : MonoBehaviour {
 		
 		distance += (transform.position - lastPosition).magnitude;
 		lastPosition = transform.position;
+		
+		score.Text = ""+ (int)distance+"m";
+		
+		FsmFloat f = fsm.FsmVariables.GetFsmFloat("Distance");
+		f.Value = distance;
 	}
 	
 	void Steer(Quaternion look) {
@@ -62,6 +82,10 @@ public class FlightController : MonoBehaviour {
 	
 	void SetThrust(bool on) {
 		thrustOn = on;
+	}
+	
+	void Die() {
+		update = false;	
 	}
 	
 	void OnDrawGizmos() {
