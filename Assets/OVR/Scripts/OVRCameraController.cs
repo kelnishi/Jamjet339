@@ -127,7 +127,6 @@ public class OVRCameraController : OVRComponent
 	// Awake
 	new void Awake()
 	{
-
 		base.Awake();
 		
 		// Get the cameras
@@ -140,8 +139,6 @@ public class OVRCameraController : OVRComponent
 			
 			if(cameras[i].name == "CameraRight")
 				CameraRight = cameras[i];
-			
-			cameras[i].depthTextureMode = DepthTextureMode.DepthNormals;
 		}
 		
 		if((CameraLeft == null) || (CameraRight == null))
