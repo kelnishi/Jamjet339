@@ -839,6 +839,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
+--- !u!1 &100100
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 400100}
+  - 20: {fileID: 2000004}
+  - 124: {fileID: 12400004}
+  - 92: {fileID: 9200000}
+  - 81: {fileID: 8100002}
+  - 114: {fileID: 11400048}
+  - 114: {fileID: 11400046}
+  - 114: {fileID: 11400050}
+  m_Layer: 0
+  m_Name: Mouse Camera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
 --- !u!4 &400000
 Transform:
   m_ObjectHideFlags: 1
@@ -882,6 +904,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 400100}
   - {fileID: 400094}
   m_Father: {fileID: 400010}
 --- !u!4 &400006
@@ -1412,7 +1435,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100094}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.010407351, y: .0212779976, z: 1.00969934}
+  m_LocalPosition: {x: .00991821289, y: .0212780237, z: 1.29891968}
   m_LocalScale: {x: 2.40400386, y: 1.35225189, z: 1.50250173}
   m_Children: []
   m_Father: {fileID: 400004}
@@ -1438,6 +1461,17 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400000}
+--- !u!4 &400100
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100100}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 400004}
 --- !u!20 &2000000
 Camera:
   m_ObjectHideFlags: 1
@@ -1488,6 +1522,34 @@ Camera:
   orthographic: 0
   orthographic size: 100
   m_Depth: 1
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_HDR: 1
+--- !u!20 &2000004
+Camera:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100100}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: .192156866, g: .301960796, b: .474509805, a: .0196078438}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: .300000012
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 100
+  m_Depth: 5
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -2012,6 +2074,13 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100004}
   m_Enabled: 1
+--- !u!81 &8100002
+AudioListener:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100100}
+  m_Enabled: 0
 --- !u!82 &8200000
 AudioSource:
   m_ObjectHideFlags: 1
@@ -2244,6 +2313,13 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!92 &9200000
+Behaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100100}
+  m_Enabled: 0
 --- !u!96 &9600000
 TrailRenderer:
   m_ObjectHideFlags: 1
@@ -2744,7 +2820,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 528
-        y: 352
+        y: 384
         width: 100
         height: 64
       isBreakpoint: 0
@@ -2778,6 +2854,7 @@ MonoBehaviour:
       actionData:
         actionNames:
         - HutongGames.PlayMaker.Actions.FloatCompare
+        - HutongGames.PlayMaker.Actions.GetMouseButtonDown
         - HutongGames.PlayMaker.Actions.GetButtonDown
         - HutongGames.PlayMaker.Actions.SendMessage
         - HutongGames.PlayMaker.Actions.GetVelocity
@@ -2788,10 +2865,11 @@ MonoBehaviour:
         - 
         - 
         - 
-        actionEnabled: 0101010101
-        actionIsOpen: 0000000000
-        actionStartIndex: 00000000070000000a0000000f00000016000000
-        actionHashCodes: 53489ed1b308678257ab1d44a290608e621d94f2
+        - 
+        actionEnabled: 010101010101
+        actionIsOpen: 000101000000
+        actionStartIndex: 00000000070000000a0000000d0000001200000019000000
+        actionHashCodes: 53489ed12d8b867bb308678257ab1d44a290608e621d94f2
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
@@ -2939,12 +3017,12 @@ MonoBehaviour:
           value: Untagged
         fsmObjectParams: []
         fsmVarParams: []
-        byteData: 0000e144016675656c000000000000000000006f7574206f66206675656c0074687275737400010000000001000000000000000000000000000000000176656c6f636974790000000001000000000100000000010000000000000000006869740000000001746872757374
+        byteData: 00001644016675656c000000000000000000006f7574206f66206675656c0000000000746872757374000174687275737400010000000001000000000000000000000000000000000176656c6f636974790000000001000000000100000000010000000000000000006869740000000001746872757374
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 0f0000000f0000000f000000170000001700000017000000010000001200000017000000110000001400000007000000070000001500000001000000140000001c0000000f0000000f0000000f0000000700000001000000070000001200000017000000130000000f000000
+        paramDataType: 0f0000000f0000000f000000170000001700000017000000010000000700000017000000110000001200000017000000110000001400000007000000070000001500000001000000140000001c0000000f0000000f0000000f0000000700000001000000070000001200000017000000130000000f000000
         paramName:
         - float1
         - float2
@@ -2953,6 +3031,9 @@ MonoBehaviour:
         - lessThan
         - greaterThan
         - everyFrame
+        - button
+        - sendEvent
+        - storeResult
         - buttonName
         - sendEvent
         - storeResult
@@ -2973,15 +3054,15 @@ MonoBehaviour:
         - sendEvent
         - storeCollider
         - storeForce
-        paramDataPos: 00000000090000000e00000013000000130000001e0000001e000000000000001f0000002500000000000000270000002b000000000000002f0000000100000030000000450000004a0000004f000000540000005800000059000000010000005d0000000000000060000000
-        paramByteDataSize: 090000000500000005000000000000000b0000000000000001000000000000000600000002000000000000000400000004000000000000000100000000000000150000000500000005000000050000000400000001000000040000000000000003000000000000000b000000
+        paramDataPos: 00000000090000000e00000013000000130000001e0000001e0000001f0000002300000029000000000000002b00000031000000000000003300000037000000000000003b000000010000003c00000051000000560000005b0000006000000064000000650000000100000069000000000000006c000000
+        paramByteDataSize: 090000000500000005000000000000000b0000000000000001000000040000000600000002000000000000000600000002000000000000000400000004000000000000000100000000000000150000000500000005000000050000000400000001000000040000000000000003000000000000000b000000
     - name: Thrusting
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
         x: 752
-        y: 352
+        y: 384
         width: 100
         height: 64
       isBreakpoint: 0
@@ -3017,6 +3098,7 @@ MonoBehaviour:
         - HutongGames.PlayMaker.Actions.FloatOperator
         - HutongGames.PlayMaker.Actions.FloatCompare
         - HutongGames.PlayMaker.Actions.GetButtonUp
+        - HutongGames.PlayMaker.Actions.GetMouseButtonUp
         - HutongGames.PlayMaker.Actions.GetRotation
         - HutongGames.PlayMaker.Actions.SendMessage
         - HutongGames.PlayMaker.Actions.SendMessage
@@ -3031,10 +3113,11 @@ MonoBehaviour:
         - 
         - 
         - 
-        actionEnabled: 0101010101010101
-        actionIsOpen: 0000000000000000
-        actionStartIndex: 00000000050000000c0000000f000000170000001c0000002100000028000000
-        actionHashCodes: e075084053489ed1b3086782f4920b9557ab1d4457ab1d44a290608e621d94f2
+        - 
+        actionEnabled: 010101010101010101
+        actionIsOpen: 000000000000000000
+        actionStartIndex: 00000000050000000c0000000f000000120000001a0000001f000000240000002b000000
+        actionHashCodes: e075084053489ed1b30867822d8b867bf4920b9557ab1d4457ab1d44a290608e621d94f2
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
@@ -3046,8 +3129,8 @@ MonoBehaviour:
         fsmOwnerDefaultParams:
         - ownerOption: 1
           gameObject:
-            useVariable: 0
-            name: 
+            useVariable: 1
+            name: AimObject
             tooltip: 
             showInInspector: 0
             networkSync: 0
@@ -3299,12 +3382,12 @@ MonoBehaviour:
           value: Untagged
         fsmObjectParams: []
         fsmVarParams: []
-        byteData: 00001644016675656c0000803f000100000000001644016675656c0100001644016675656c000000000000000000006f7574206f66206675656c017468727573740001000000000000000000000000000000000161696d0000000000000000000000000100000000010000000001000000000100000000010000000001000000010000000001000000010000000000000000000000000176656c6f636974790000000001000000000100000000010000000000000000006869740000000001746872757374
+        byteData: 00001644016675656c0000803f000100000000001644016675656c0100001644016675656c000000000000000000006f7574206f66206675656c017468727573740001000000007468727573740001000000000000000000000000000000000161696d0000000000000000000000000100000000010000000001000000000100000000010000000001000000010000000001000000010000000000000000000000000176656c6f636974790000000001000000000100000000010000000000000000006869740000000001746872757374
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 0f0000000f000000070000000f000000010000000f0000000f0000000f0000001700000017000000170000000100000012000000170000001100000014000000230000001c0000000f0000000f0000000f000000070000000100000014000000070000000700000015000000010000001400000007000000070000001500000001000000140000001c0000000f0000000f0000000f0000000700000001000000070000001200000017000000130000000f000000
+        paramDataType: 0f0000000f000000070000000f000000010000000f0000000f0000000f0000001700000017000000170000000100000012000000170000001100000007000000170000001100000014000000230000001c0000000f0000000f0000000f000000070000000100000014000000070000000700000015000000010000001400000007000000070000001500000001000000140000001c0000000f0000000f0000000f0000000700000001000000070000001200000017000000130000000f000000
         paramName:
         - float1
         - float2
@@ -3319,6 +3402,9 @@ MonoBehaviour:
         - greaterThan
         - everyFrame
         - buttonName
+        - sendEvent
+        - storeResult
+        - button
         - sendEvent
         - storeResult
         - gameObject
@@ -3351,15 +3437,15 @@ MonoBehaviour:
         - sendEvent
         - storeCollider
         - storeForce
-        paramDataPos: 00000000090000000e000000120000001b0000001c000000250000002a0000002f0000002f0000003a0000003a000000000000003b0000004100000000000000430000005700000064000000690000006e000000730000007700000001000000780000007c00000000000000800000000200000081000000850000000100000089000000030000008a0000009f000000a4000000a9000000ae000000b2000000b300000001000000b700000000000000ba000000
-        paramByteDataSize: 0900000005000000040000000900000001000000090000000500000005000000000000000b000000000000000100000000000000060000000200000000000000140000000d00000005000000050000000500000004000000010000000000000004000000040000000000000001000000000000000400000004000000000000000100000000000000150000000500000005000000050000000400000001000000040000000000000003000000000000000b000000
+        paramDataPos: 00000000090000000e000000120000001b0000001c000000250000002a0000002f0000002f0000003a0000003a000000000000003b0000004100000043000000470000004d000000000000004f0000006300000070000000750000007a0000007f00000083000000010000008400000088000000000000008c000000020000008d0000009100000001000000950000000300000096000000ab000000b0000000b5000000ba000000be000000bf00000001000000c300000000000000c6000000
+        paramByteDataSize: 0900000005000000040000000900000001000000090000000500000005000000000000000b000000000000000100000000000000060000000200000004000000060000000200000000000000140000000d00000005000000050000000500000004000000010000000000000004000000040000000000000001000000000000000400000004000000000000000100000000000000150000000500000005000000050000000400000001000000040000000000000003000000000000000b000000
     - name: Check Collision
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
         x: 528
-        y: 448
+        y: 480
         width: 118
         height: 48
       isBreakpoint: 0
@@ -3425,13 +3511,21 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 464
-        y: 560
+        y: 592
         width: 100
-        height: 16
+        height: 32
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
-      transitions: []
+      transitions:
+      - fsmEvent:
+          name: explode
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: State 2
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
       actionData:
         actionNames:
         - HutongGames.PlayMaker.Actions.GetOwner
@@ -3452,6 +3546,7 @@ MonoBehaviour:
         - HutongGames.PlayMaker.Actions.PlaySound
         - HutongGames.PlayMaker.Actions.ActivateGameObject
         - HutongGames.PlayMaker.Actions.DestroySelf
+        - HutongGames.PlayMaker.Actions.GetKeyDown
         customNames:
         - 
         - 
@@ -3471,10 +3566,11 @@ MonoBehaviour:
         - 
         - 
         - 
-        actionEnabled: 010101010101010101010101010101010101
-        actionIsOpen: 000000000000000000000000000000000000
-        actionStartIndex: 0000000001000000080000000f000000170000001c00000020000000290000002b0000002e00000032000000360000003e00000042000000470000004a0000004e00000053000000
-        actionHashCodes: 257aa72fac65eef1a290608e8b80e9a5b4797e4a83d22ec85d0b71a4e5d54d706de84c630afe47cb0afe47cb8b80e9a583d22ec857ab1d44717c319ebdddbb00b4797e4a3ee6a00a
+        - 
+        actionEnabled: 01010101010101010101010101010101010101
+        actionIsOpen: 00000000000000000000000000000000000001
+        actionStartIndex: 0000000001000000080000000f000000170000001c00000020000000290000002b0000002e00000032000000360000003e00000042000000470000004a0000004e0000005300000054000000
+        actionHashCodes: 257aa72fac65eef1a290608e8b80e9a5b4797e4a83d22ec85d0b71a4e5d54d706de84c630afe47cb0afe47cb8b80e9a583d22ec857ab1d44717c319ebdddbb00b4797e4a3ee6a00a437581ed
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
@@ -3717,12 +3813,12 @@ MonoBehaviour:
           typeName: UnityEngine.AudioClip
           value: {fileID: 8300000, guid: 7cfac6468ee1e42aca139bef0588d542, type: 3}
         fsmVarParams: []
-        byteData: 00000000000000000000000001000000000000000000000000010000000000000000000000000000000000000001706f736974696f6e000000000100000000010000000001000000000000000000000000000000000001706f736974696f6e000020410000004040000000000001000000000000010001000000000001000000000000000000000000000000000001000000000000000000000000010000b44200000000000100000000010000000000000000000000000000000000000176656c6f63697479000000000000000000000000000176656c6f63697479000020c1000000000000000000000000000001706f736974696f6e0000000000000000000000000176656c6f63697479000000000000000000000000000001706f736974696f6e00000000000020410000000000000000000000000000000000000001706f736974696f6e0000000001000000000100000000010000000000000000010000000000010000000000000000000000000000000000000000000000010000803f000100010000000100
+        byteData: 00000000000000000000000001000000000000000000000000010000000000000000000000000000000000000001706f736974696f6e000000000100000000010000000001000000000000000000000000000000000001706f736974696f6e000020410000004040000000000001000000000000010001000000000001000000000000000000000000000000000001000000000000000000000000010000b44200000000000100000000010000000000000000000000000000000000000176656c6f63697479000000000000000000000000000176656c6f63697479000020c1000000000000000000000000000001706f736974696f6e0000000000000000000000000176656c6f63697479000000000000000000000000000001706f736974696f6e00000000000020410000000000000000000000000000000000000001706f736974696f6e0000000001000000000100000000010000000000000000010000000000010000000000000000000000000000000000000000000000010000803f0001000100000001000d0000006578706c6f64650001
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 1300000013000000130000001c0000001c000000130000001100000010000000140000001c0000000f0000000f0000000f0000000700000001000000140000001c0000000f0000000f0000000f00000007000000010000000100000014000000110000001100000001000000010000001400000013000000110000001100000014000000230000001c0000000f0000000f0000000f0000000700000001000000010000001c000000010000001c0000000f000000010000001c0000001c00000001000000010000001c0000001c0000000100000001000000140000001c0000000f0000000f0000000f000000070000000100000001000000140000001300000011000000110000001400000007000000070000001500000001000000130000000f00000011000000140000001c000000180000000f000000140000001100000011000000010000000100000011000000
+        paramDataType: 1300000013000000130000001c0000001c000000130000001100000010000000140000001c0000000f0000000f0000000f0000000700000001000000140000001c0000000f0000000f0000000f00000007000000010000000100000014000000110000001100000001000000010000001400000013000000110000001100000014000000230000001c0000000f0000000f0000000f0000000700000001000000010000001c000000010000001c0000000f000000010000001c0000001c00000001000000010000001c0000001c0000000100000001000000140000001c0000000f0000000f0000000f000000070000000100000001000000140000001300000011000000110000001400000007000000070000001500000001000000130000000f00000011000000140000001c000000180000000f000000140000001100000011000000010000000100000011000000070000001700000011000000
         paramName:
         - storeGameObject
         - gameObject
@@ -3808,15 +3904,18 @@ MonoBehaviour:
         - resetOnExit
         - everyFrame
         - detachChildren
-        paramDataPos: 000000000100000002000000000000000d000000030000001a0000001c0000000000000021000000360000003b000000400000004500000049000000010000004a0000005f00000064000000690000006e0000007200000073000000020000007400000076000000780000007900000003000000040000007a0000007c000000040000007e0000008f0000009c000000a1000000a6000000ab000000af000000b0000000b1000000c6000000c7000000dc000000e1000000e2000000f70000000c0100000d0100000e0100002301000030010000310100000500000032010000470100004c01000051010000560100005a0100005b01000006000000050000005c0100005e010000070000006001000064010000000000006801000006000000690100006e0100000800000070010000000000007d010000090000008201000084010000860100008701000088010000
-        paramByteDataSize: 0000000000000000000000000d0000000d00000000000000020000000500000000000000150000000500000005000000050000000400000001000000000000001500000005000000050000000500000004000000010000000100000000000000020000000200000001000000010000000000000000000000020000000200000000000000110000000d000000050000000500000005000000040000000100000001000000150000000100000015000000050000000100000015000000150000000100000001000000150000000d00000001000000010000000000000015000000050000000500000005000000040000000100000001000000000000000000000002000000020000000000000004000000040000000000000001000000000000000500000002000000000000000d0000000000000005000000000000000200000002000000010000000100000002000000
+        - key
+        - sendEvent
+        - storeResult
+        paramDataPos: 000000000100000002000000000000000d000000030000001a0000001c0000000000000021000000360000003b000000400000004500000049000000010000004a0000005f00000064000000690000006e0000007200000073000000020000007400000076000000780000007900000003000000040000007a0000007c000000040000007e0000008f0000009c000000a1000000a6000000ab000000af000000b0000000b1000000c6000000c7000000dc000000e1000000e2000000f70000000c0100000d0100000e0100002301000030010000310100000500000032010000470100004c01000051010000560100005a0100005b01000006000000050000005c0100005e010000070000006001000064010000000000006801000006000000690100006e0100000800000070010000000000007d0100000900000082010000840100008601000087010000880100008a0100008e01000095010000
+        paramByteDataSize: 0000000000000000000000000d0000000d00000000000000020000000500000000000000150000000500000005000000050000000400000001000000000000001500000005000000050000000500000004000000010000000100000000000000020000000200000001000000010000000000000000000000020000000200000000000000110000000d000000050000000500000005000000040000000100000001000000150000000100000015000000050000000100000015000000150000000100000001000000150000000d00000001000000010000000000000015000000050000000500000005000000040000000100000001000000000000000000000002000000020000000000000004000000040000000000000001000000000000000500000002000000000000000d0000000000000005000000000000000200000002000000010000000100000002000000040000000700000002000000
     - name: Check Collision 2
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
         x: 736
-        y: 448
+        y: 480
         width: 130
         height: 48
       isBreakpoint: 0
@@ -3827,7 +3926,7 @@ MonoBehaviour:
           name: FINISHED
           isSystemEvent: 1
           isGlobal: 0
-        toState: 
+        toState: Thrusting
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
@@ -3882,9 +3981,9 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 480
-        y: 112
+        y: 144
         width: 100
-        height: 32
+        height: 48
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
@@ -3897,15 +3996,25 @@ MonoBehaviour:
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
+      - fsmEvent:
+          name: mouse
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: Mouse Set
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
       actionData:
         actionNames:
         - HutongGames.PlayMaker.Actions.GetButtonDown
+        - HutongGames.PlayMaker.Actions.GetMouseButtonDown
         customNames:
         - 
-        actionEnabled: 01
-        actionIsOpen: 01
-        actionStartIndex: 00000000
-        actionHashCodes: b3086782
+        - 
+        actionEnabled: 0101
+        actionIsOpen: 0101
+        actionStartIndex: 0000000003000000
+        actionHashCodes: b30867822d8b867b
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -3924,25 +4033,28 @@ MonoBehaviour:
           value: Jump
         fsmObjectParams: []
         fsmVarParams: []
-        byteData: 7468727573740001
+        byteData: 7468727573740001000000006d6f7573650001
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 120000001700000011000000
+        paramDataType: 120000001700000011000000070000001700000011000000
         paramName:
         - buttonName
         - sendEvent
         - storeResult
-        paramDataPos: 000000000000000006000000
-        paramByteDataSize: 000000000600000002000000
+        - button
+        - sendEvent
+        - storeResult
+        paramDataPos: 000000000000000006000000080000000c00000011000000
+        paramByteDataSize: 000000000600000002000000040000000500000002000000
     - name: Gliding
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
         x: 320
-        y: 336
+        y: 368
         width: 100
         height: 32
       isBreakpoint: 0
@@ -4010,7 +4122,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 704
-        y: 272
+        y: 304
         width: 100
         height: 48
       isBreakpoint: 0
@@ -4076,7 +4188,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 304
-        y: 448
+        y: 480
         width: 130
         height: 48
       isBreakpoint: 0
@@ -4142,7 +4254,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 128
-        y: 336
+        y: 368
         width: 100
         height: 32
       isBreakpoint: 0
@@ -4283,7 +4395,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 64
-        y: 448
+        y: 480
         width: 130
         height: 48
       isBreakpoint: 0
@@ -4349,7 +4461,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 352
-        y: 272
+        y: 304
         width: 100
         height: 32
       isBreakpoint: 0
@@ -4514,7 +4626,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 528
-        y: 192
+        y: 224
         width: 100
         height: 32
       isBreakpoint: 0
@@ -4602,6 +4714,216 @@ MonoBehaviour:
         - everyFrame
         paramDataPos: 00000000000000000200000004000000050000000100000006000000080000000a0000000b000000020000000c0000000e0000001000000011000000
         paramByteDataSize: 000000000200000002000000010000000100000000000000020000000200000001000000010000000000000002000000020000000100000001000000
+    - name: State 2
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 480
+        y: 656
+        width: 100
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: 
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.LoadLevelNum
+        customNames:
+        - 
+        actionEnabled: 01
+        actionIsOpen: 01
+        actionStartIndex: 00000000
+        actionHashCodes: 743d2550
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        byteData: 0000000000000000
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 10000000010000001700000011000000
+        paramName:
+        - levelIndex
+        - additive
+        - loadedEvent
+        - dontDestroyOnLoad
+        paramDataPos: 00000000050000000600000006000000
+        paramByteDataSize: 05000000010000000000000002000000
+    - name: Mouse Set
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 832
+        y: 112
+        width: 100
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Mouse Wait
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.SetGameObject
+        - HutongGames.PlayMaker.Actions.SetParent
+        - HutongGames.PlayMaker.Actions.ActivateGameObject
+        customNames:
+        - 
+        - 
+        - 
+        actionEnabled: 010101
+        actionIsOpen: 010101
+        actionStartIndex: 000000000300000007000000
+        actionHashCodes: 49d1941983d22ec8b4797e4a
+        unityObjectParams: []
+        fsmGameObjectParams:
+        - useVariable: 1
+          name: AimObject
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 100004}
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 100100}
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 100100}
+        fsmOwnerDefaultParams:
+        - ownerOption: 1
+          gameObject:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 100094}
+        - ownerOption: 1
+          gameObject:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 100100}
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        byteData: 0000000000010001000000
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 130000001300000001000000140000001300000011000000110000001400000011000000110000000100000001000000
+        paramName:
+        - variable
+        - gameObject
+        - everyFrame
+        - gameObject
+        - parent
+        - resetLocalPosition
+        - resetLocalRotation
+        - gameObject
+        - activate
+        - recursive
+        - resetOnExit
+        - everyFrame
+        paramDataPos: 00000000010000000000000000000000020000000100000003000000010000000500000007000000090000000a000000
+        paramByteDataSize: 000000000000000001000000000000000000000002000000020000000000000002000000020000000100000001000000
+    - name: Mouse Wait
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 800
+        y: 176
+        width: 100
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: thrust
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: State 1
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.GetMouseButtonDown
+        customNames:
+        - 
+        actionEnabled: 01
+        actionIsOpen: 01
+        actionStartIndex: 00000000
+        actionHashCodes: 2d8b867b
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        byteData: 000000007468727573740001
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 070000001700000011000000
+        paramName:
+        - button
+        - sendEvent
+        - storeResult
+        paramDataPos: 00000000040000000a000000
+        paramByteDataSize: 040000000600000002000000
     events:
     - name: FINISHED
       isSystemEvent: 1
@@ -4613,6 +4935,9 @@ MonoBehaviour:
       isSystemEvent: 0
       isGlobal: 0
     - name: hit
+      isSystemEvent: 0
+      isGlobal: 0
+    - name: mouse
       isSystemEvent: 0
       isGlobal: 0
     - name: out of fuel
@@ -4689,6 +5014,12 @@ MonoBehaviour:
         networkSync: 0
         value: {x: 0, y: 0, z: 0, w: 0}
       gameObjectVariables:
+      - useVariable: 1
+        name: AimObject
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {fileID: 100004}
       - useVariable: 1
         name: self
         tooltip: 
@@ -8508,20 +8839,121 @@ MonoBehaviour:
   adaptionSpeed: 1.5
   tonemapper: {fileID: 4800000, guid: 003377fc2620a44939dadde6fe3f8190, type: 3}
   validRenderTextureFormat: 0
+--- !u!114 &11400046
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d35a90bed98554f4d8b92c9cd3cfbafa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tweakMode: 0
+  screenBlendMode: 1
+  hdr: 0
+  sepBlurSpread: 1
+  useSrcAlphaAsMask: 0
+  bloomIntensity: 1.5
+  bloomThreshhold: .349999994
+  bloomBlurIterations: 1
+  lensflares: 0
+  hollywoodFlareBlurIterations: 2
+  lensflareMode: 1
+  hollyStretchWidth: 3.5
+  lensflareIntensity: 1
+  lensflareThreshhold: .300000012
+  flareColorA: {r: .400000006, g: .400000006, b: .800000012, a: .75}
+  flareColorB: {r: .400000006, g: .800000012, b: .800000012, a: .75}
+  flareColorC: {r: .800000012, g: .400000006, b: .800000012, a: .75}
+  flareColorD: {r: .800000012, g: .400000006, b: 0, a: .75}
+  blurWidth: 1
+  lensFlareVignetteMask: {fileID: 2800000, guid: 95ef4804fe0be4c999ddaa383536cde8,
+    type: 3}
+  lensFlareShader: {fileID: 4800000, guid: 459fe69d2f6d74ddb92f04dbf45a866b, type: 3}
+  vignetteShader: {fileID: 4800000, guid: 562f620336e024ac99992ff05725a89a, type: 3}
+  separableBlurShader: {fileID: 4800000, guid: a9df009a214e24a5ebbf271595f8d5b6, type: 3}
+  addBrightStuffOneOneShader: {fileID: 4800000, guid: f7898d203e9b94c0dbe2bf9dd5cb32c0,
+    type: 3}
+  screenBlendShader: {fileID: 4800000, guid: 53b3960ee3d3d4a5caa8d5473d120187, type: 3}
+  hollywoodFlaresShader: {fileID: 4800000, guid: e2baf3cae8edc4daf94c9adc2154be00,
+    type: 3}
+  brightPassFilterShader: {fileID: 4800000, guid: 186c4c0d31e314f049595dcbaf4ca129,
+    type: 3}
+--- !u!114 &11400048
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd05e71c69dd4457fa205c9eea7c2326, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 3
+  adaptiveTextureSize: 256
+  remapCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 2
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  exposureAdjustment: 1.5
+  middleGrey: .400000006
+  white: 2
+  adaptionSpeed: 1.5
+  tonemapper: {fileID: 4800000, guid: 003377fc2620a44939dadde6fe3f8190, type: 3}
+  validRenderTextureFormat: 0
+--- !u!114 &11400050
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b931f9421d67f494aac542bed4ec66e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  axes: 0
+  sensitivityX: 15
+  sensitivityY: 15
+  minimumX: -360
+  maximumX: 360
+  minimumY: -60
+  maximumY: 60
 --- !u!124 &12400000
 Behaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100004}
-  m_Enabled: 0
+  m_Enabled: 1
 --- !u!124 &12400002
 Behaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100006}
-  m_Enabled: 0
+  m_Enabled: 1
+--- !u!124 &12400004
+Behaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100100}
+  m_Enabled: 1
 --- !u!136 &13600000
 CapsuleCollider:
   m_ObjectHideFlags: 1
